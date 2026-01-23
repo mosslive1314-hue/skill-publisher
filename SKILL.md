@@ -29,11 +29,38 @@ push-skill <skill-name>
 对于全新创建的 skill:
 
 ```bash
-cd ~/.claude/skills/<skill-name>
-gh repo create <skill-name> --public --source=. --push
+init-skill-repo <skill-name>
 ```
 
+脚本会自动:
+1. 初始化 Git 仓库
+2. 创建 .gitignore 文件
+3. 在 GitHub 创建仓库
+4. 首次提交并推送
+
 之后每次修改只需运行 `push-skill <skill-name>`。
+
+### 检查所有 Skills 状态
+
+```bash
+check-skills
+```
+
+显示所有 skills 的 Git 状态,包括:
+- 已初始化/未初始化
+- 有未提交的更改
+- 有未推送的提交
+- 远程仓库配置
+
+### 批量推送多个 Skills
+
+```bash
+# 推送所有已初始化的 skills
+batch-push
+
+# 推送指定的 skills
+batch-push skill1 skill2 skill3
+```
 
 ## 核心 Scripts
 
@@ -72,6 +99,46 @@ bash ~/.claude/skills/skill-publisher/scripts/init-skill-repo.sh <skill-name>
 - 创建 GitHub 仓库 (使用 GitHub CLI)
 - 配置远程仓库
 - 首次提交并推送
+
+### scripts/check-skills.sh
+
+检查所有 skills 的 Git 状态。
+
+**使用方法:**
+```bash
+bash ~/.claude/skills/skill-publisher/scripts/check-skills.sh
+```
+
+**功能:**
+- 扫描所有 skills 目录
+- 显示每个 skill 的 Git 状态
+- 标识需要推送的 skills
+- 提供操作建议
+
+**输出信息:**
+- 未初始化 Git 的 skills
+- 有未提交更改的 skills
+- 有未推送提交的 skills
+- 干净的 skills 及远程仓库信息
+
+### scripts/batch-push.sh
+
+批量推送多个 skills 到 GitHub。
+
+**使用方法:**
+```bash
+# 推送所有已初始化的 skills
+bash ~/.claude/skills/skill-publisher/scripts/batch-push.sh
+
+# 推送指定的 skills
+bash ~/.claude/skills/skill-publisher/scripts/batch-push.sh skill1 skill2 skill3
+```
+
+**功能:**
+- 批量处理多个 skills
+- 使用自动提交信息 (避免交互)
+- 显示推送进度和结果
+- 统计成功/失败数量
 
 ## 推送工作流
 
