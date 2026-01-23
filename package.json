@@ -1,0 +1,54 @@
+{
+  "name": "skill-publisher",
+  "version": "1.1.0",
+  "description": "一键发布 Claude Code Skills 到 GitHub - 自动初始化、推送、管理 Git 仓库",
+  "author": "mosslive1314-hue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mosslive1314-hue/skill-publisher.git"
+  },
+  "homepage": "https://github.com/mosslive1314-hue/skill-publisher#readme",
+  "bugs": {
+    "url": "https://github.com/mosslive1314-hue/skill-publisher/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "skill",
+    "git",
+    "github",
+    "publisher",
+    "automation",
+    "cli"
+  ],
+  "bin": {
+    "push-skill": "bin/push-skill.js",
+    "init-skill-repo": "bin/init-skill-repo.js",
+    "check-skills": "bin/check-skills.js",
+    "batch-push": "bin/batch-push.js",
+    "skill-publisher": "bin/skill-publisher.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "test": "bash scripts/test.sh",
+    "push": "node bin/push-skill.js",
+    "init": "node bin/init-skill-repo.js",
+    "check": "node bin/check-skills.js",
+    "batch": "node bin/batch-push.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/",
+    "references/",
+    "*.md",
+    "VERSION"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ]
+}
