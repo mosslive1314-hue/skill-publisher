@@ -2,20 +2,41 @@
 
 > 一键发布 Claude Code Skills 到 GitHub
 
-[![npm version](https://badge.fury.io/js/@mosslive1314-hue%2Fskill-publisher.svg)](https://www.npmjs.com/package/@mosslive1314-hue/skill-publisher)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 🚀 一键安装
 
-### 在 Claude Code 对话框中运行
+### 方法 1：直接克隆（推荐）
+
+在 Claude Code 对话框或终端中运行：
 
 ```bash
-npm install @mosslive1314-hue/skill-publisher
+git clone https://github.com/mosslive1314-hue/skill-publisher.git ~/.claude/skills/skill-publisher && source ~/.claude/skills/skill-publisher/scripts/install.sh
 ```
 
-安装完成后，skill 会自动添加到你的 `~/.claude/skills/` 目录，Claude Code 会自动识别并可以使用。
+**安装完成！** Skill 会自动添加到你的 `~/.claude/skills/` 目录，Claude Code 会自动识别并可以使用。
+
+### 方法 2：手动克隆
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/mosslive1314-hue/skill-publisher.git ~/.claude/skills/skill-publisher
+
+# 2. 配置别名（添加到 ~/.bashrc）
+cat >> ~/.bashrc << 'EOF'
+
+# Skill Publisher 别名
+alias 推送='bash ~/.claude/skills/skill-publisher/scripts/push-skill.sh'
+alias 初始化技能仓库='bash ~/.claude/skills/skill-publisher/scripts/init-skill-repo.sh'
+alias 检查技能='bash ~/.claude/skills/skill-publisher/scripts/check-skills.sh'
+alias 批量推送='bash ~/.claude/skills/skill-publisher/scripts/batch-push.sh'
+EOF
+
+# 3. 重新加载配置
+source ~/.bashrc
+```
 
 ---
 
@@ -178,7 +199,7 @@ skill-publisher/
 │   ├── init-skill-repo.sh       # 初始化脚本
 │   ├── check-skills.sh          # 状态检查
 │   ├── batch-push.sh            # 批量推送
-│   └── install.js               # NPM 安装脚本
+│   └── install.sh               # 一键安装脚本
 └── references/                   # 参考文档
     ├── GUIDE.md                  # 完整指南
     ├── EXAMPLES.md               # 使用案例
@@ -196,37 +217,9 @@ skill-publisher/
 
 ---
 
-## 🔄 手动安装
-
-如果不使用 NPM，也可以手动安装：
-
-```bash
-# 克隆仓库
-git clone https://github.com/mosslive1314-hue/skill-publisher.git ~/.claude/skills/skill-publisher
-
-# 配置别名（添加到 ~/.bashrc）
-cat >> ~/.bashrc << 'EOF'
-
-# Skill Publisher 别名
-alias 推送='bash ~/.claude/skills/skill-publisher/scripts/push-skill.sh'
-alias 初始化技能仓库='bash ~/.claude/skills/skill-publisher/scripts/init-skill-repo.sh'
-alias 检查技能='bash ~/.claude/skills/skill-publisher/scripts/check-skills.sh'
-alias 批量推送='bash ~/.claude/skills/skill-publisher/scripts/batch-push.sh'
-EOF
-
-# 重新加载配置
-source ~/.bashrc
-```
-
----
-
 ## 🔄 更新
 
 ```bash
-# NPM 安装
-npm update @mosslive1314-hue/skill-publisher
-
-# 手动安装
 cd ~/.claude/skills/skill-publisher
 git pull
 ```
@@ -238,7 +231,7 @@ git pull
 **v1.2.0** - 2026-01-23
 
 ✨ 新增:
-- NPM 一键安装支持
+- 一键安装脚本
 - 批量推送功能
 - 状态检查功能
 - 完整文档
@@ -259,4 +252,3 @@ MIT License
 ---
 
 **📍 GitHub**: https://github.com/mosslive1314-hue/skill-publisher
-**📦 NPM**: https://www.npmjs.com/package/@mosslive1314-hue/skill-publisher
