@@ -1,5 +1,5 @@
 {
-  "name": "skill-publisher",
+  "name": "@mosslive1314-hue/skill-publisher",
   "version": "1.2.0",
   "description": "一键发布 Claude Code Skills 到 GitHub - 自动初始化、推送、管理 Git 仓库",
   "author": "mosslive1314-hue",
@@ -21,20 +21,9 @@
     "automation",
     "cli"
   ],
-  "bin": {
-    "push-skill": "bin/push-skill.js",
-    "init-skill-repo": "bin/init-skill-repo.js",
-    "check-skills": "bin/check-skills.js",
-    "batch-push": "bin/batch-push.js",
-    "skill-publisher": "bin/skill-publisher.js"
-  },
   "scripts": {
-    "postinstall": "node scripts/postinstall.js",
-    "test": "bash scripts/test.sh",
-    "push": "node bin/push-skill.js",
-    "init": "node bin/init-skill-repo.js",
-    "check": "node bin/check-skills.js",
-    "batch": "node bin/batch-push.js"
+    "postinstall": "node scripts/install.js",
+    "test": "bash scripts/test.sh"
   },
   "files": [
     "bin/",
@@ -50,5 +39,8 @@
     "darwin",
     "linux",
     "win32"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
