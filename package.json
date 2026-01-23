@@ -1,6 +1,6 @@
 {
   "name": "skill-publisher",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "一键发布 Claude Code Skills 到 GitHub - 自动初始化、推送、管理 Git 仓库",
   "author": "mosslive1314-hue",
   "license": "MIT",
