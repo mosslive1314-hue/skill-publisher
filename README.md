@@ -2,23 +2,36 @@
 
 > 一键发布 Claude Code Skills 到 GitHub
 
+[![npm version](https://badge.fury.io/js/@mosslive1314-hue%2Fskill-publisher.svg)](https://www.npmjs.com/package/@mosslive1314-hue/skill-publisher)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 🚀 一键安装
 
-### 方法 1：直接克隆（推荐）
+### 方法 1：NPM/NPX 安装 ⭐ 推荐
 
-在 Claude Code 对话框或终端中运行：
+在 Claude Code 对话框中运行：
+
+```bash
+npm install @mosslive1314-hue/skill-publisher
+```
+
+**或使用 NPX（无需安装）：**
+
+```bash
+npx @mosslive1314-hue/skill-publisher
+```
+
+**安装完成！** Skill 会自动添加到你的 `~/.claude/skills/` 目录，别名自动配置，立即可用。
+
+### 方法 2：Git 克隆
 
 ```bash
 git clone https://github.com/mosslive1314-hue/skill-publisher.git ~/.claude/skills/skill-publisher && source ~/.claude/skills/skill-publisher/scripts/install.sh
 ```
 
-**安装完成！** Skill 会自动添加到你的 `~/.claude/skills/` 目录，Claude Code 会自动识别并可以使用。
-
-### 方法 2：手动克隆
+### 方法 3：手动克隆
 
 ```bash
 # 1. 克隆仓库
@@ -183,6 +196,11 @@ EOF
    gh auth login
    ```
 
+3. **Node.js** (使用 NPM 安装时需要)
+   ```bash
+   node --version  # 需要 >= 14.0.0
+   ```
+
 ---
 
 ## 📦 目录结构
@@ -191,15 +209,19 @@ EOF
 skill-publisher/
 ├── SKILL.md                      # Skill 定义
 ├── README.md                     # 本文件
+├── package.json                  # NPM 配置
 ├── QUICKREF.md                   # 快速参考
 ├── DEPLOYMENT.md                 # 部署指南
+├── NPM-INFO.md                   # NPM 发布说明
+├── INSTALLATION-TEST.md          # 安装测试报告
 ├── VERSION                       # 版本号
 ├── scripts/                      # Bash 脚本
 │   ├── push-skill.sh            # 推送脚本
 │   ├── init-skill-repo.sh       # 初始化脚本
 │   ├── check-skills.sh          # 状态检查
 │   ├── batch-push.sh            # 批量推送
-│   └── install.sh               # 一键安装脚本
+│   ├── install.sh               # 一键安装脚本
+│   └── test.sh                  # 测试脚本
 └── references/                   # 参考文档
     ├── GUIDE.md                  # 完整指南
     ├── EXAMPLES.md               # 使用案例
@@ -214,12 +236,18 @@ skill-publisher/
 - **使用案例**: [references/EXAMPLES.md](references/EXAMPLES.md)
 - **常见问题**: [references/FAQ.md](references/FAQ.md)
 - **部署指南**: [DEPLOYMENT.md](DEPLOYMENT.md)
+- **NPM 发布**: [NPM-INFO.md](NPM-INFO.md)
+- **测试报告**: [INSTALLATION-TEST.md](INSTALLATION-TEST.md)
 
 ---
 
 ## 🔄 更新
 
 ```bash
+# NPM 安装
+npm update @mosslive1314-hue/skill-publisher
+
+# Git 克隆
 cd ~/.claude/skills/skill-publisher
 git pull
 ```
@@ -231,10 +259,11 @@ git pull
 **v1.2.0** - 2026-01-23
 
 ✨ 新增:
-- 一键安装脚本
+- NPM/NPX 一键安装支持
 - 批量推送功能
 - 状态检查功能
 - 完整文档
+- 安装测试报告
 
 ---
 
@@ -252,3 +281,4 @@ MIT License
 ---
 
 **📍 GitHub**: https://github.com/mosslive1314-hue/skill-publisher
+**📦 NPM**: https://www.npmjs.com/package/@mosslive1314-hue/skill-publisher
