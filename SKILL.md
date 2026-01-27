@@ -2,6 +2,8 @@
 name: skill-publisher
 description: 一键发布 Claude Code Skills 到 GitHub。使用场景: (1) 推送已修改的 skill 到 GitHub 仓库, (2) 初始化新 skill 并创建 GitHub 仓库, (3) 批量推送多个 skills, (4) 管理 skill 的 Git 仓库。当用户说"推送 skill"、"发布 skill"、"把 skill 上传到 GitHub"、"创建 skill 仓库"时触发。
 license: MIT
+github_url: https://github.com/mosslive1314-hue/skill-publisher.git
+github_hash: 48dd96bd33ea5d0a7747ab967b69f80374cd929f
 ---
 
 # Skill Publisher
