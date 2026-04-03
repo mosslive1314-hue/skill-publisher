@@ -1,9 +1,12 @@
 # Skill Publisher
 
-> 一键发布 Claude Code Skills 到 GitHub
+> 🚀 一键发布 Claude Code Skills 到 GitHub
+>
+> ### 🚀 飞书 CLI 创作者大赛 参赛作品
 
 [![npm version](https://badge.fury.io/js/@mosslive1314-hue%2Fskill-publisher.svg)](https://www.npmjs.com/package/@mosslive1314-hue/skill-publisher)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Competition](https://img.shields.io/badge/competition-Feishu%20CLI%20Creator%20Contest-ff69b4)
 
 ---
 
@@ -273,6 +276,26 @@ git pull
 https://github.com/mosslive1314-hue/skill-publisher
 
 ---
+
+## 🚀 飞书 CLI 创作者大赛
+
+本作品参加 **[飞书 CLI 创作者大赛](https://bytedance.larkoffice.com/docx/HWgKdWfeSoDw36xu7EYctBrUnsg)**，完全符合飞书 CLI 开发规范。
+
+### 作品信息
+
+- **作品名称**: `lark-skill-publisher` - Skill 发布助手
+- **作者**: 买买 (@mosslive1314-hue)
+- **分类**: development 开发工具
+- **飞书 CLI Skill**: `lark-skill-publisher/SKILL.md`
+
+### 核心创新
+
+| 创新点 | 说明 |
+|------|------|
+| **开发效率工具** | 解决 Claude Code Skill 开发发布痛点，一键完成所有 Git 操作 |
+| **中文友好** | 内置中文别名，直接用「推送」「初始化」就能用，符合国内使用习惯 |
+| **一键搞定** | 从初始化新建到修改推送，一条龙自动化，不用记 Git 命令 |
+| **批量操作** | 支持批量推送多个 Skill，适合有多个 Skill 的开发者 |
 
 ## 📄 许可证
 
