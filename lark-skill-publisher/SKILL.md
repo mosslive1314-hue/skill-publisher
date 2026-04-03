@@ -1,7 +1,7 @@
 ---
 name: lark-skill-publisher
 version: 1.2.0
-description: "🚀 一键发布 Claude Code Skills 到 GitHub - 自动初始化仓库、创建 GitHub 仓库、一键推送、批量推送、状态检查。让你专注创作，发布交给机器。"
+description: "🚀 一键发布 Skill 到 GitHub - 支持 Claude Code Skill / 飞书 CLI Skill。自动初始化仓库、创建 GitHub 仓库、一键推送、批量推送、状态检查。你专注创作 Skill，发布交给机器。"
 metadata:
   category: "development"
   requires:
@@ -10,33 +10,41 @@ metadata:
 
 # lark-skill-publisher v1.2.0 - Skill 发布助手
 
-> **一键发布 Claude Code Skills 到 GitHub** — 让你专注创作，发布交给机器。
+> **一键发布 Skill 到 GitHub 仓库** — 支持 Claude Code Skill / 飞书 CLI Skill，创建好的 Skill 一键完成 Git 初始化 → 创建 GitHub 仓库 → 推送。让你专注创作，发布交给机器。
 
 ## 🎯 定位
 
-Skill Publisher 是一个**开发效率工具**，帮你一键发布 Claude Code Skills 到 GitHub：
+Skill Publisher 是一个**开发效率工具**，帮你一键发布 Skills 到 GitHub：
 
+- ✅ 支持 **Claude Code Skill**
+- ✅ 支持 **飞书 CLI Skill**
 - 修改完 Skill 文件，一条命令推送到 GitHub
 - 新建 Skill，一条命令初始化 + 创建 GitHub 仓库 + 首次推送
 - 批量推送多个 Skills，检查所有 Skills 状态
 - 支持中文别名，符合国内使用习惯
 
 **适合**:
-- 你经常用 Claude Code 创建 Skills
+- 你用 Claude Code 或飞书 CLI 创建 Skills
 - 你想要把自己写的 Skills 开源分享出去
 - 你嫌每次 git add/commit/push 太麻烦
 - 想要一个自动化的发布 workflow
+- 你参加飞书 CLI 创作者大赛，写完 Skill 一键发布
 
 ## ✨ 核心能力
 
 | 能力 | 说明 |
 |------|------|
+| ✨ **双格式支持** | ✅ Claude Code Skill / ✅ 飞书 CLI Skill，两种格式都支持一键发布 |
 | 🚀 **一键推送** | 修改完 Skill，一条命令完成 add/commit/push |
-| 🎉 **初始化新建** | 一条命令初始化 Git + 创建 GitHub 仓库 + 首次推送 |
+| 🎉 **初始化新建** | 一条命令初始化 Git + 创建 GitHub 仓库 + 自动生成 README + 首次推送 |
 | 🔍 **状态检查** | 扫描所有 Skills，显示哪些有未提交更改 |
 | 📦 **批量推送** | 一次推送多个 Skills，节省时间 |
 | 🎨 **友好交互** | 彩色输出，交互式选择提交信息，清晰提示 |
 | 🇨🇳 **中文友好** | 内置中文别名，直接用「推送」「初始化」「检查」就能用 |
+
+**特别适合飞书 CLI 创作者大赛**：
+- 你创作完成飞书 CLI Skill → 一句话推送 → GitHub 就更新好了
+- 自动生成完整项目页面，直接就能提交参赛
 
 ## 🗺️ 工作流
 

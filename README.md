@@ -1,6 +1,6 @@
-# Skill Publisher
+# lark-skill-publisher
 
-> 🚀 一键发布 Claude Code Skills 到 GitHub
+> 🚀 一键发布 Skill 到 GitHub 仓库 — 支持 Claude Code Skill / 飞书 CLI Skill，创建好的技能一键完成 Git 初始化 → 提交 → 创建 GitHub 仓库 → 推送。全自动搞定！
 >
 > ### 🚀 飞书 CLI 创作者大赛 参赛作品
 
@@ -10,7 +10,19 @@
 
 ---
 
-## 🚀 一键安装
+## ✨ 它能做什么
+
+- ✅ **Claude Code Skill** → 一键发布到 GitHub
+- ✅ **飞书 CLI Skill** → 同样一键发布，完美支持！
+- ✅ 自动初始化 Git 仓库
+- ✅ 自动创建 GitHub 远程仓库
+- ✅ 自动生成完整 README、LICENSE、.gitignore
+- ✅ 自动配置中文别名，直接用「推送」「初始化」就能用
+- ✅ 交互式提交，不用记 Git 命令
+- ✅ 批量推送多个 Skill
+- ✅ 检查所有 Skill 状态
+
+**一句话**：你只需要写好 Skill 内容，剩下所有 GitHub 操作交给它一键完成！
 
 ### 方法 1：NPM/NPX 安装 ⭐ 推荐
 
@@ -58,14 +70,19 @@ source ~/.bashrc
 
 ## ✨ 功能特性
 
+✅ **支持两种 Skill 格式**：Claude Code Skill / 飞书 CLI Skill 都能发布
 ✅ 自动初始化 Git 仓库
-✅ 自动创建 .gitignore
-✅ 交互式提交信息选择
+✅ 自动创建 GitHub 远程仓库
+✅ 自动生成完整项目文件：README / LICENSE / .gitignore
+✅ 自动配置中文命令别名，直接用「推送」「初始化」就能用
+✅ 交互式提交信息选择，不用拼 Git 命令
 ✅ 一键推送到 GitHub
 ✅ 批量推送多个 skills
 ✅ 检查所有 skills 状态
 ✅ 自动在浏览器中打开仓库
 ✅ 彩色输出，清晰直观
+
+**不管你是开发 Claude Code Skill 还是飞书 CLI Skill，全都一键搞定！**
 
 ---
 
@@ -186,7 +203,9 @@ EOF
 
 ## 🔧 前置要求
 
-在使用前，请确保已安装：
+在使用前，请确保已安装并配置：
+
+### 必需
 
 1. **Git** (必需)
    ```bash
@@ -196,12 +215,25 @@ EOF
 2. **GitHub CLI** (必需)
    ```bash
    gh --version
-   gh auth login
    ```
 
-3. **Node.js** (使用 NPM 安装时需要)
+   **首次使用需要登录 GitHub**：
    ```bash
-   node --version  # 需要 >= 14.0.0
+   gh auth login
+   ```
+   按照提示完成认证即可。
+
+3. **GitHub Personal Access Token** (如果 SSH 方式需要)
+   - 如果使用 HTTPS 方式推送，需要配置 GitHub Token
+   - 创建 Token：GitHub → Settings → Developer settings → Personal access tokens
+   - 需要勾选 `repo` 权限
+   - 保存在你的 Git credential helper 中
+
+### 可选
+
+4. **Node.js** (使用 NPM 安装时需要，>= 14.0.0)
+   ```bash
+   node --version
    ```
 
 ---
@@ -292,10 +324,19 @@ https://github.com/mosslive1314-hue/skill-publisher
 
 | 创新点 | 说明 |
 |------|------|
-| **开发效率工具** | 解决 Claude Code Skill 开发发布痛点，一键完成所有 Git 操作 |
-| **中文友好** | 内置中文别名，直接用「推送」「初始化」就能用，符合国内使用习惯 |
-| **一键搞定** | 从初始化新建到修改推送，一条龙自动化，不用记 Git 命令 |
-| **批量操作** | 支持批量推送多个 Skill，适合有多个 Skill 的开发者 |
+| **双格式支持** | ✅ 支持 **Claude Code Skill** ✅ 支持 **飞书 CLI Skill**，两种格式都能一键发布 |
+| **自动生成完整项目** | 你只需要写好 SKILL.md，它自动帮你生成 README、LICENSE、.gitignore，一条龙 |
+| **中文友好** | 内置中文命令别名，直接用「推送」「初始化」就能用，不用记英文命令 |
+| **一键搞定** | 从创建 GitHub 仓库 → Git 提交 → 远程推送，全部自动化，不用记 Git 命令 |
+| **批量操作** | 支持批量推送多个 Skill，适合创作多个 Skill 的开发者 |
+
+### 飞书 CLI 开发者特别友好
+
+- 你用飞书 CLI 创建好 Skill → `lark-skill-publisher` 一键发布到 GitHub
+- 自动生成完整的项目页面，包含参赛说明、badges、使用文档
+- 改完 Skill → 一句话推送，不用手动操作
+
+**开发者只需要专注写 Skill 内容，发布交给它就好了！**
 
 ## 📄 许可证
 
